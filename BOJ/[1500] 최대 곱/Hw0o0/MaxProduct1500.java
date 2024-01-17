@@ -1,16 +1,24 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class MaxProduct1500 {
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
-        int S = Integer.parseInt(br.readLine());
-        int K = Integer.parseInt(br.readLine());
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        boolean check = false;
+        int S= 0;
+        int K= 0;
+        while(!check) {
+            S = sc.nextInt();
+            K = sc.nextInt();
+            if (S <= 100 && S >= K) {
+                check = true;
+            }else {
+                System.out.println("잘못된 입력 값입니다.");
+            }
+        }
         int share = S / K;
-        int rest = S % K, total = 1;
+        int rest = S % K;
+        long total = 1;
         for (int a = 1; a <= K; a++) {
             if(a<=rest){
                 total*=(share+1);
