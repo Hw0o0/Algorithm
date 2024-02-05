@@ -191,7 +191,6 @@ public class RankedQueue20006 {
 - 만약 방의 인원 수가 다 찼다면 방을 하나 더 생성해준다.
 - 그리고 room의 size를 통해 인원 수가 다 채워졌다면 started!를 출력해주고 그렇지 않다면 waiting!을 출력해준다.
 - Comparable을 통해서 Person의 nickname에 기준으로 정렬을 시켰다. 그리고 방의 인원수를 순서대로 출력해준다.
-- 세번쨰 if문에서
 - ## :black_nib: **Review**
 
 - 로직을 너무 어렵게 생각을 해서 구현하는데 시간이 많이 소요되어서 시간 안에 구현하지 못했다.
