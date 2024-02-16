@@ -11,7 +11,7 @@
  ```java
 import java.util.Scanner;
 
-public class Main {
+public class IntelligentTrain2544 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int total=0,person = 0;

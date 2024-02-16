@@ -11,7 +11,7 @@
  ```java
 import java.util.*;
 
-public class Main {
+public class HomeAddress1284 {
     public static int calculate(int num) {
         if (num == 1) {
             num = 2;

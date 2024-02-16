@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Main {
+public class NoHearPerson1764 {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         HashSet<String> no = new HashSet<>();
