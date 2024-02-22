@@ -1,4 +1,4 @@
-package hash;
+package 해시;
 
 public class Poketmon {
 
