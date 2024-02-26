@@ -1,43 +1,26 @@
 import java.util.*;
 
 public class FunctionDevelopment {
-    public static int takeTime(int remainingPercent, int speed) {
-        int takeTime = 0;
-        int currentPercent = 100 - remainingPercent;
-        if (speed == 1) {
-            takeTime = remainingPercent;
-        } else {
-            while (currentPercent < 100) {
-                currentPercent += speed;
-                takeTime++;
-            }
-        }
-        return takeTime;
-    }
+    public List<Integer> solution(int[] progresses, int[] speeds) {
 
-    public int[] solution(int[] progresses, int[] speeds) {
-        List<Integer> function = new ArrayList<>();
-        for (int a = 0; a < progresses.length; a++) {
-            int cnt = 1;
-            int remainingPercent = 100 - progresses[a];
-            int takeTime = takeTime(remainingPercent, speeds[a]);
-            for (int b = a + 1; b < progresses.length; b++) {
-                int nextRemainingPercent = 100 - progresses[b];
-                int nextTakeTime = takeTime(nextRemainingPercent, speeds[b]);
-                if (takeTime > nextTakeTime) {
-                    cnt++;
-                } else {
-                    break;
-                }
-            }
-            function.add(cnt);
-            a += (cnt - 1);
+        List<Integer> answer = new ArrayList<>();
+        Queue<Integer> takeTime = new LinkedList<>();
+
+        for(int i=0; i<progresses.length; i++){
+            takeTime.add((int)Math.ceil((100.0-progresses[i])/speeds[i]));
         }
 
-        int[] answer = new int[function.size()];
-        for (int c = 0; c < function.size(); c++) {
-            answer[c] = function.get(c);
+        while(!takeTime.isEmpty()){
+            int minDays = takeTime.poll();
+            int count = 1;
+
+            while(!takeTime.isEmpty() && takeTime.peek() <= minDays){
+                takeTime.poll();
+                count++;
+            }
+            answer.add(count);
         }
+
         return answer;
     }
 }

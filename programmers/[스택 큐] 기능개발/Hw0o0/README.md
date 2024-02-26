@@ -64,20 +64,21 @@ public class FunctionDevelopment {
 import java.util.*;
 
 class Solution {
-    public ArrayList solution(int[] progresses, int[] speeds) {
 
-        ArrayList<Integer> answer = new ArrayList<>();
+    public List<Integer> solution(int[] progresses, int[] speeds) {
+
+        List<Integer> answer = new ArrayList<>();
         Queue<Integer> takeTime = new LinkedList<>();
-        
-        for(int i=0; i<progresses.length; i++){
-            takeTime.add((int)Math.ceil((100.0-progresses[i])/speeds[i]));
+
+        for (int i = 0; i < progresses.length; i++) {
+            takeTime.add((int) Math.ceil((100.0 - progresses[i]) / speeds[i]));
         }
 
-        while(!takeTime.isEmpty()){
+        while (!takeTime.isEmpty()) {
             int minDays = takeTime.poll();
             int count = 1;
 
-            while(!takeTime.isEmpty() && takeTime.peek() <= minDays){
+            while (!takeTime.isEmpty() && takeTime.peek() <= minDays) {
                 takeTime.poll();
                 count++;
             }
